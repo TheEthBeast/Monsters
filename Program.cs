@@ -50,7 +50,7 @@ namespace AreaTrainer
             {
                 Console.WriteLine("Enter another number:");
                 f = Convert.ToInt32(Console.ReadLine());
-            } while (f < 10 && f > 5);
+            } while (f <= 10 && f >= 5);
 
 
             Console.ReadLine();
