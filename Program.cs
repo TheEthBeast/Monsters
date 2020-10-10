@@ -53,23 +53,26 @@ namespace AreaTrainer
             } while (f <= 10 && f >= 5);
 
             int guess = 0;
-            Random rand = new Random();
-            int new1 = rand.Next(1, 1000);
-
+            Random rnd = new Random();
+            int new1 = rnd.Next(1, 100);
+            int guesses = 0;
             Console.WriteLine("Enter a Number");
             guess = Convert.ToInt32(Console.ReadLine());
-
-            if (guess > new1)
+            do
             {
-                Console.WriteLine("Lower");
-                guess = Convert.ToInt32(Console.ReadLine());
-            }
-            else if (guess < new1)
-            {
-                Console.WriteLine("Higher");
-                guess = Convert.ToInt32(Console.ReadLine());
-            }
-
+                if (guess > new1)
+                {
+                    Console.WriteLine("Lower");
+                    guess = Convert.ToInt32(Console.ReadLine());
+                }
+                else if (guess < new1)
+                {
+                    Console.WriteLine("Higher");
+                    guess = Convert.ToInt32(Console.ReadLine());
+                }
+                guesses = guesses + 1;
+            } while (guess != new1);
+            Console.WriteLine("Well done you guessed it in {0} guesses!", guesses);
             Console.ReadLine();
         }
     }
