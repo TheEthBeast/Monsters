@@ -27,28 +27,28 @@ namespace AreaTrainer
             int c = 0;
             do
             {
-                Console.WriteLine("Enter a number:");
+                Console.WriteLine("Enter a number greater than 50:");
                 c = Convert.ToInt32(Console.ReadLine());
             } while (c < 50);
 
             int d = 0;
             do
             {
-                Console.WriteLine("Enter another number:");
+                Console.WriteLine("Enter another number that when squared is greater than 50:");
                 d = Convert.ToInt32(Console.ReadLine());
             } while (d * d < 50);
 
             int e = 0;
             do
             {
-                Console.WriteLine("Enter a number:");
+                Console.WriteLine("Enter a number that is between 1 and 10:");
                 e = Convert.ToInt32(Console.ReadLine());
             } while (e < 1 || e > 10);
 
             int f = 0;
             do
             {
-                Console.WriteLine("Enter another number:");
+                Console.WriteLine("Enter another number that is greater than 10 or less than 5:");
                 f = Convert.ToInt32(Console.ReadLine());
             } while (f <= 10 && f >= 5);
 
@@ -56,7 +56,7 @@ namespace AreaTrainer
             Random rnd = new Random();
             int new1 = rnd.Next(1, 100);
             int guesses = 0;
-            Console.WriteLine("Enter a Number");
+            Console.WriteLine("Guess the number between 1 and 100:");
             guess = Convert.ToInt32(Console.ReadLine());
             do
             {
@@ -72,7 +72,15 @@ namespace AreaTrainer
                 }
                 guesses = guesses + 1;
             } while (guess != new1);
-            Console.WriteLine("Well done you guessed it in {0} guesses!", guesses);
+
+            if (guesses == 1)
+            {
+                Console.WriteLine("Well done you guessed it immediately!");
+            }
+            else
+            {
+                Console.WriteLine("Well done you guessed it in {0} guesses!", guesses);
+            }
             Console.ReadLine();
         }
     }
